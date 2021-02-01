@@ -32,15 +32,24 @@ class Cli
         puts ""
         puts ""
         puts "Choose one of the number of the player"
+        
         input = gets.strip.capitalize
-
         player_selection(input)
         
     end
+  
+    def player_selection(player_data)
+       player_info = Player.find_by_name(player_data)
+       player_info.each do |info|
+        puts " Name: #{info.name_display_first_last}"
+        puts " Position: #{info.position_txt}"
+        puts " Jersey Number: #{info.jersey_number}"
+        puts " Batting: #{info.bats}"
+        puts " Team Name: #{info.team_name}"
+       end
+       input = gets.strip.capitalize
+       player_selection(input)
 
-    def player_selection(s)
-       x = Player.find_by_name(s)
-       #binding.pry
     end
 
     def bye_bye

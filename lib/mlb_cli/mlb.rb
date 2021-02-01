@@ -21,7 +21,7 @@ class Player
     
     def self.find_by_name(name)
         self.all.select do |player_data|
-            player_data.name_display_first_last.downcase == name
+            player_data.name_display_first_last.downcase == name.downcase
            #binding.pry
         end
     end
