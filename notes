@@ -1,0 +1,24 @@
+puts "Welcome to My MLB CLI App"
+puts "New York Yankees Opening Day Line-up"
+puts "Pleae choose the number of the player to know more about"
+
+puts "--------------------"
+
+
+puts "1. Brett Gardner CF"
+puts "2. Aaron Judge RF"
+puts "3. Giancarlo Stanton LF"
+puts "4. Luke Voit DH"
+puts "5. Miguel Andujar 3B"
+puts "6. Gary Sanchez C"
+puts "7. Greg Bird 1B"
+puts "8. Gleyber Torres 2B"
+puts "9. Troy Tulowitzki SS"
+
+# after user hit a number the information about the player will Display
+puts "--------------------"
+
+
+puts "Display Player information"
+puts "hit 1 Main Menu"
+puts "hit 2 Exit App"

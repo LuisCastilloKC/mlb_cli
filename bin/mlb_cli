@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "mlb_cli"
+
+
+
+# rest = RestClient.get("http://lookup-service-prod.mlb.com/json/named.roster_40.bam?team_id=%27147%27")
+# httparty = HTTParty.get("http://lookup-service-prod.mlb.com/json/named.roster_40.bam?team_id=%27147%27")
+
+Cli.new.call
