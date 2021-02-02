@@ -1,6 +1,6 @@
 class Player
 
-    attr_accessor :name_display_first_last, :position_txt, :jersey_number, :team_name, :bats
+    attr_accessor :name_display_first_last, :position_txt, :jersey_number, :team_name, :bats, :weight, :height_feet, :height_inches, :status_code
 
     @@all = []
 

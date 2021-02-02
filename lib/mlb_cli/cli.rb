@@ -1,56 +1,79 @@
-require 'pry'
 
 class Cli
+    include PlayerDetail::InstanceMethods
 
     def call
-        
-        puts "   |  Welcome to New York Yankees 40 Playes  |"
+        puts "   |  Welcome to New York Yankees 40 Players  |"
         puts "   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ "
         puts ""
         puts "   Enter 'Yankees' to Display the 40 players"
         puts "   To exit the application, enter 'exit'"
         Api.get_data
          menu
-    end
-
-    def menu 
-        input = gets.strip.downcase
-        if  input == "yankees"
+        end
+        
+        def menu 
+            input = nil
+            while input != "yankees"
+            input = gets.strip.downcase
             players_list
-        elsif input == "exit"
-            bye_bye
-        else
-            invalid_entry
+            while input != "exit"
+                input = gets.strip.downcase
+                bye_bye
+            end
         end
+        # input = gets.strip.downcase
+        # if  input == "yankees"
+        #     players_list
+        # elsif input == "exit"
+        #     bye_bye
+        # else
+        #     invalid_entry
+        # end
     end
 
-    def players_list
-        #  binding.pry
-        Player.all.each_with_index do |api_result, index|
-            puts "#{index + 1}. #{api_result.name_display_first_last}"
-        end
-        puts ""
-        puts ""
-        puts "Choose one of the number of the player"
+#     def players_list
+#         #  binding.pry
+#         Player.all.each_with_index do |api_result, index|
+#             puts "#{index + 1}. #{api_result.name_display_first_last}"
+#         end
+#         puts ""
+#         puts ""
+#         puts "Enter Player Name to know more about"
         
-        input = gets.strip.capitalize
-        player_selection(input)
+#         input = gets.strip.capitalize
+#         player_selection(input)
         
-    end
+#     end
   
-    def player_selection(player_data)
-       player_info = Player.find_by_name(player_data)
-       player_info.each do |info|
-        puts " Name: #{info.name_display_first_last}"
-        puts " Position: #{info.position_txt}"
-        puts " Jersey Number: #{info.jersey_number}"
-        puts " Batting: #{info.bats}"
-        puts " Team Name: #{info.team_name}"
-       end
-       input = gets.strip.capitalize
-       player_selection(input)
+# def player_selection(player_data)
+#     player_info = Player.find_by_name(player_data)
+#     player_info.each do |info|
+#         puts " Name: #{info.name_display_first_last}"
+#         puts " Position: #{info.position_txt}"
+#         puts " Jersey Number: #{info.jersey_number}"
+#         puts " Batting: #{info.bats}"
+#         puts " Team Name: #{info.team_name}"
+#      end
 
-    end
+
+
+    #    input = gets.strip.capitalize
+    #    player_selection(input)
+    
+
+
+
+    #     if input == player_info
+    #     players_list
+    #     elsif input == "exit"
+    #     bye_bye
+    #     else
+    #     invalid_entry
+    # end
+
+
+#end
 
     def bye_bye
         puts " You have exited the App, see you next time!"
@@ -61,6 +84,9 @@ class Cli
         menu
     end
 end
+
+
+########################### Notes ################
     # def yankees_players_list
 
     #     Player.all.each.with_index(1) do |player, index|
@@ -116,29 +142,3 @@ end
 #     end
 # end
 
-
-
-# puts "Welcome to My MLB CLI App"
-# puts "New York Yankees Opening Day Line-up"
-# puts "Pleae choose the number of the player to know more about"
-
-# puts "--------------------"
-
-
-# puts "1. Brett Gardner CF"
-# puts "2. Aaron Judge RF"
-# puts "3. Giancarlo Stanton LF"
-# puts "4. Luke Voit DH"
-# puts "5. Miguel Andujar 3B"
-# puts "6. Gary Sanchez C"
-# puts "7. Greg Bird 1B"
-# puts "8. Gleyber Torres 2B"
-# puts "9. Troy Tulowitzki SS"
-
-# # after user hit a number the information about the player will Display
-# puts "--------------------"
-
-
-# puts "Display Player information"
-# puts "hit 1 Main Menu"
-# puts "hit 2 Exit App"

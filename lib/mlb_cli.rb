@@ -4,10 +4,10 @@ require 'httparty'
 # require 'rest-client'
 # require 'json'
 
-require_relative "./mlb_cli/api.rb"
-require_relative "./mlb_cli/cli.rb"
-require_relative "./mlb_cli/mlb.rb"
-
+require_relative "./mlb_cli/player/player_info"
+require_relative "./mlb_cli/api"
+require_relative "./mlb_cli/cli"
+require_relative "./mlb_cli/mlb"
 require_relative "mlb_cli/version"
 
 # est = RestClient.get("http://lookup-service-prod.mlb.com/json/named.roster_40.bam?team_id=%27147%27")
