@@ -2,7 +2,7 @@ module PlayerDetail
     module InstanceMethods
 
             def players_list
-                #  binding.pry
+              
                 Player.all.each_with_index do |api_result, index|
                     puts "#{index + 1}. #{api_result.name_display_first_last}"
                 end
@@ -11,14 +11,14 @@ module PlayerDetail
                 puts "Enter Player Name to know more about"
                 
                 input = gets.strip.capitalize
-                player_selection(input)
-                
+                player_selection(input)               
             end
-            #:weight, :height_feet, :height_inches, :status_code
-            def player_selection(player_data)
-            player_info = Player.find_by_name(player_data)
-            player_info.each do |info|
-                puts " Name: #{info.name_display_first_last}"
+            
+        def player_selection(player_data)
+                player_info = Player.find_by_name(player_data)
+            if  player_info.length == 1 ## if the name match 1 of the player then the code execute because is TRUE if is false it will jump to else
+                player_info.each do |info|
+                puts " Name: #{info.name_display_first_last}" #string interpolation 
                 puts " Position: #{info.position_txt}"
                 puts " Jersey Number: #{info.jersey_number}"
                 puts " Batting: #{info.bats}"
@@ -28,8 +28,10 @@ module PlayerDetail
                 puts " Team Name: #{info.team_name}"
                 puts ""
             end
-            input = gets.strip.capitalize
-            player_selection(input)
+            menu_two
+        else
+            invalid_entry
+            end
         end
     end
 end
