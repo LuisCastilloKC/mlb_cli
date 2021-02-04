@@ -16,9 +16,9 @@ module PlayerDetail
             
         def player_selection(player_data)
                 player_info = Player.find_by_name(player_data)
-            if  player_info.length == 1 ## if the name match 1 of the player then the code execute because is TRUE if is false it will jump to else
+            if  player_info.length == 1 
                 player_info.each do |info|
-                puts " Name: #{info.name_display_first_last}" #string interpolation 
+                puts " Name: #{info.name_display_first_last}" 
                 puts " Position: #{info.position_txt}"
                 puts " Jersey Number: #{info.jersey_number}"
                 puts " Bat: #{info.bats}"
