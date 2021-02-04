@@ -1,8 +1,6 @@
 # MlbCli
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/mlb_cli`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to the MLB 40 Players of the New York Yankees! This gem will show you the list of the current 40 players name of the New York Yankees and more information of each player. All of this information is pulled from the https://appac.github.io/mlb-data-api-docs/
 
 ## Installation
 
@@ -22,7 +20,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Execute the following:
+
+`ruby ./bin/mlb_cli`
+
+When the above line is execute follow the prompts 'Yankees' to List the Players or 'Exit' leave the app.
 
 ## Development
 
