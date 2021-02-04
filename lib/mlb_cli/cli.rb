@@ -11,6 +11,7 @@ class Cli
         puts ""
         puts "       Enter 'Yankees' to display the 40 players"
         puts "         To exit the application, enter 'exit'"
+        puts ""
         Api.get_data
          menu
     end
